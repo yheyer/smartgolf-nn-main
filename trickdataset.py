@@ -30,7 +30,7 @@ class TrickDataset:
                         if (file[0] == (name)):
                             path = (root+"/"+file)
                             sample = np.loadtxt(path, dtype=np.float32, delimiter=";")
-                            sample = sample[199:400,:6]
+                            sample = sample[199:300,3:6]
                             data.append(sample)
                             labels.append(id)
                         else: 
@@ -58,5 +58,4 @@ class TrickDataset:
         ]
 
 trick_list = ['0', '1', '2']
-ds = TrickDataset(rootfolder="golfdatanew", label_list=trick_list)
-
+ds = TrickDataset(rootfolder="golfdata", label_list=trick_list)
